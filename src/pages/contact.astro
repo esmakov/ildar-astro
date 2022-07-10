@@ -1,6 +1,20 @@
 ---
-import MySiteLayout from '../layouts/MySiteLayout.astro';
+import MySiteLayout from "../layouts/MySiteLayout.astro";
 ---
+
 <MySiteLayout>
-  <h1>Contact</h1>
+  <div class="flex justify-evenly p-10">
+    <div class="flex flex-col bg-gray-400 justify-center items-center">
+      <h1 class="p-3 text-xl">Contact Me</h1>
+      <a href="mailto:smakov.ildar@gmail.com">Email</a>
+    </div>
+
+    <div class="">
+      <img
+        src="../../public/assets/self.JPG"
+        alt="Portrait of Ildar Smakov"
+        class="max-w-sm"
+      />
+    </div>
+  </div>
 </MySiteLayout>
