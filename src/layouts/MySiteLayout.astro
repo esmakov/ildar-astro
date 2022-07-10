@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
-  <body>
-    <nav class="flex p-6">
-      <a href="/">Ildar Smakov</a>
-      <ul>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="https://vimeo.com/ildarsmakov">Vimeo</a></li>
+  <body class="font-serif bg-gray-800">
+    <nav class="flex justify-between p-4 bg-gray-200">
+      <a class="p-2 text-lg md:pl-12" href="/">Ildar Smakov</a>
+      <ul class="flex">
+        <li class="hover:shadow-md p-2"><a href="/contact">Contact</a></li>
+        <li class="hover:shadow-md p-2">
+          <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
+        </li>
       </ul>
     </nav>
-    <article>
+    <main class="bg-gray-400">
       <slot></slot>
       <!-- your content is injected here -->
-    </article>
-    <footer>Test footer</footer>
+    </main>
+    <footer class="bg-gray-600">Test footer</footer>
   </body>
 </html>
