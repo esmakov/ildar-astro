@@ -1,6 +1,6 @@
 ---
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-import selfPortrait from "../assets/self.jpg";
+import selfPortrait from "/src/assets/self.jpg";
 ---
 
 <MySiteLayout>
@@ -11,7 +11,11 @@ import selfPortrait from "../assets/self.jpg";
     </div>
 
     <div class="">
-      <img src={selfPortrait} alt="Portrait of Ildar Smakov" class="max-w-sm" />
+      <img
+        src={selfPortrait}
+        alt="Portrait of Ildar Smakov"
+        class="w-32 md:w-64 lg:w-96"
+      />
     </div>
   </div>
 </MySiteLayout>

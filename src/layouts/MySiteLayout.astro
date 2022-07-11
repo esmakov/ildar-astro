@@ -12,24 +12,24 @@ var currentTime = new Date();
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../assets/apple-touch-icon.png"
+      href="/src/assets/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/favicon-32x32.png"
+      href="/src/assets/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets/favicon-16x16.png"
+      href="/src/assets/favicon-16x16.png"
     />
     <link rel="manifest" href="../assets/site.webmanifest" />
   </head>
   <body class="font-serif bg-gray-400">
-    <nav class="flex justify-around p-4 bg-gray-300">
+    <nav class="flex justify-around p-2 bg-gray-300">
       <a class="p-1 text-xl md:pl-12 text-slate-800" href="/">Ildar Smakov</a>
       <ul class="flex">
         <li class="hover:shadow-lg p-2"><a href="/contact">Contact</a></li>
@@ -48,7 +48,7 @@ var currentTime = new Date();
       <!-- your content is injected here -->
     </main>
     <footer
-      class="flex justify-center items-center h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300"
+      class="flex justify-center items-center fixed h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300"
     >
       Copyright {currentTime.getFullYear()} Ildar Smakov
     </footer>
