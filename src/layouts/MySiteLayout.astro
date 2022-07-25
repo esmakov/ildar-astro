@@ -14,22 +14,33 @@ var currentTime = new Date();
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
-  <body class="font-serif bg-gray-400">
-    <nav class="flex justify-around p-2 bg-gray-300">
-      <a class="p-1 text-xl md:pl-12 text-slate-800" href="/">Ildar Smakov</a>
-      <ul class="flex">
-        <li class="hover:shadow-lg p-2"><a href="/contact">Contact</a></li>
-        <li class="hover:shadow-lg p-2">
-          <a href="https://www.youtube.com/user/CinemaArtGroup/videos"
-            >Youtube
-          </a>
-        </li>
-        <li class="hover:shadow-lg p-2">
-          <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
-        </li>
-      </ul>
+  <body class="font-serif">
+    <nav class="flex justify-around p-2 bg-gray-300 shadow-2xl">
+      <div class="flex flex-col">
+        <a class="p-1 text-xl md:pl-12 text-slate-800" href="/">Ildar Smakov</a>
+        <p class="text-sm">Professional Wedding Photo & Video</p>
+      </div>
+
+      <div class="">
+        <ul class="flex flex-col md:flex-row">
+          <li class="hover:shadow-lg m-1 md:m-3">
+            <a href="/photos">Photography</a>
+          </li>
+          <li class="hover:shadow-lg m-1 md:m-3">
+            <a href="/contact">Contact</a>
+          </li>
+          <li class="hover:shadow-lg m-1 md:m-3">
+            <a href="https://www.youtube.com/user/CinemaArtGroup/videos"
+              >Youtube
+            </a>
+          </li>
+          <li class="hover:shadow-lg m-1 md:m-3">
+            <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <main class="bg-gray-400">
+    <main class="">
       <slot></slot>
       <!-- your content is injected here -->
     </main>

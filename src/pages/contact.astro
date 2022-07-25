@@ -3,18 +3,14 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
 ---
 
 <MySiteLayout>
-  <div class="flex justify-evenly p-10">
-    <div class="flex flex-col bg-gray-400 justify-center items-center">
-      <h1 class="p-3 text-xl">Contact Me</h1>
-      <a href="mailto:smakov.ildar@gmail.com">Email</a>
+  <div class="flex justify-evenly bg-gray-500">
+    <div class="flex flex-col justify-center items-center text-gray-50">
+      <h1 class="p-3 text-xl ">Contact Me</h1>
+      <a href="mailto:smakov.ildar@gmail.com" class="underline">Email</a>
     </div>
 
     <div class="">
-      <img
-        src="../self.png"
-        alt="Portrait of Ildar Smakov"
-        class="w-32 md:w-64 lg:w-96"
-      />
+      <img src="../../public/self.webp" alt="Portrait of Ildar Smakov" class="w-32 shadow-2xl md:w-64 lg:w-80 m-5"/>
     </div>
   </div>
 </MySiteLayout>
