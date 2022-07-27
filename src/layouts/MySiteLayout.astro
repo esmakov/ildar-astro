@@ -3,51 +3,63 @@ var currentTime = new Date();
 ---
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Ildar Smakov Wedding Photo & Video</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/dist/output.css" rel="stylesheet" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-  <body class="font-serif">
-    <nav class="flex justify-around p-2 bg-gray-300 shadow-2xl">
-      <div class="flex flex-col">
-        <a class="p-1 text-xl md:pl-12 text-slate-800" href="/">Ildar Smakov</a>
-        <p class="text-sm">Professional Wedding Photo & Video</p>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <title>Ildar Smakov Wedding Photo & Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/dist/output.css" rel="stylesheet" />
 
-      <div class="">
-        <ul class="flex flex-col md:flex-row">
-          <li class="hover:shadow-lg m-1 md:m-3">
-            <a href="/photos">Photography</a>
-          </li>
-          <li class="hover:shadow-lg m-1 md:m-3">
-            <a href="/contact">Contact</a>
-          </li>
-          <li class="hover:shadow-lg m-1 md:m-3">
-            <a href="https://www.youtube.com/user/CinemaArtGroup/videos"
-              >Youtube
-            </a>
-          </li>
-          <li class="hover:shadow-lg m-1 md:m-3">
-            <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <main class="">
-      <slot></slot>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2PER38VWR"></script>
+</head>
+
+<body class="font-serif">
+  <nav class="flex justify-around p-2 bg-gray-300 shadow-2xl">
+    <div class="flex flex-col">
+      <a class="p-1 text-xl md:pl-12 text-slate-800" href="/">Ildar Smakov</a>
+      <p class="text-sm">Professional Wedding Photo & Video</p>
+    </div>
+
+    <div class="">
+      <ul class="flex flex-col md:flex-row">
+        <li class="hover:shadow-lg m-1 md:m-3">
+          <a href="/photos">Photography</a>
+        </li>
+        <li class="hover:shadow-lg m-1 md:m-3">
+          <a href="/contact">Contact</a>
+        </li>
+        <li class="hover:shadow-lg m-1 md:m-3">
+          <a href="https://www.youtube.com/user/CinemaArtGroup/videos">Youtube
+          </a>
+        </li>
+        <li class="hover:shadow-lg m-1 md:m-3">
+          <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="">
+    <slot>
       <!-- your content is injected here -->
-    </main>
-    <footer
-      class="flex justify-center items-center fixed h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300"
-    >
-      Copyright {currentTime.getFullYear()} Ildar Smakov
-    </footer>
-  </body>
+    </slot>
+  </main>
+  <footer class="flex justify-center items-center fixed h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300">
+    Copyright {currentTime.getFullYear()} Ildar Smakov
+  </footer>
+
+  <!-- <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M2PER38VWR');
+</script> -->
+</body>
+
 </html>
