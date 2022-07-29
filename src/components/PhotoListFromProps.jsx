@@ -3,7 +3,8 @@ export default function PhotoListFromProps({ imageList, imageStyle }) {
     <div>
       {Object.entries(imageList).map(([imageUrl]) => (
         <div key={imageUrl}>
-          <img src={imageUrl} class={imageStyle} />
+          {/* This is a dumb hacky workaround because rollup breaks the image paths after bundling */}
+          <img src={imageUrl.substring(12)} class={imageStyle} />
         </div>
       ))}
     </div>
