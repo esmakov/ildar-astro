@@ -1,5 +1,6 @@
 ---
 var currentTime = new Date();
+const navLiStyle = "hover:shadow-lg mx-1 md:mx-3"
 ---
 
 <html>
@@ -27,23 +28,21 @@ var currentTime = new Date();
       <p class="text-sm text-gray-700">Professional Wedding Photo & Video</p>
     </div>
 
-    <div class="">
-      <ul class="flex">
-        <li class="hover:shadow-lg mr-1 md:mx-3">
-          <a href="/photos">Photography</a>
-        </li>
-        <li class="hover:shadow-lg mx-1 md:mx-3">
-          <a href="/contact">Contact</a>
-        </li>
-        <li class="hover:shadow-lg mx-1 md:mx-3">
-          <a href="https://www.youtube.com/user/CinemaArtGroup/videos">Youtube
-          </a>
-        </li>
-        <li class="hover:shadow-lg mx-1 md:mx-3">
-          <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="flex">
+      <li class={navLiStyle}>
+        <a href="/photos">Photography</a>
+      </li>
+      <li class={navLiStyle}>
+        <a href="/contact">Contact</a>
+      </li>
+      <li class={navLiStyle}>
+        <a href="https://www.youtube.com/user/CinemaArtGroup/videos">Youtube
+        </a>
+      </li>
+      <li class={navLiStyle}>
+        <a href="https://vimeo.com/ildarsmakov">Vimeo</a>
+      </li>
+    </ul>
   </nav>
   <main class="">
     <slot>
