@@ -17,13 +17,7 @@ var currentTime = new Date();
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-M2PER38VWR"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-M2PER38VWR');
-  </script>
 </head>
 
 <body class="font-serif">
@@ -59,6 +53,13 @@ var currentTime = new Date();
   <footer class="flex justify-center items-center fixed h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300">
     Copyright {currentTime.getFullYear()} Ildar Smakov
   </footer>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-M2PER38VWR');
+  </script>
 </body>
 
 </html>
