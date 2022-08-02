@@ -18,7 +18,13 @@ const navLiStyle = "text-lg mx-1 md:mx-3 hover:shadow-lg hover:text-xl"
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-M2PER38VWR"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
+    gtag('config', 'G-M2PER38VWR');
+  </script>
 </head>
 
 <body class="font-serif">
@@ -64,13 +70,6 @@ const navLiStyle = "text-lg mx-1 md:mx-3 hover:shadow-lg hover:text-xl"
   <footer class="flex justify-center items-center fixed h-7 w-full bottom-0 text-sm bg-gray-800 text-zinc-300">
     Copyright {currentTime.getFullYear()} Ildar Smakov
   </footer>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-M2PER38VWR');
-  </script>
 </body>
 
 </html>
