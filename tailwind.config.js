@@ -14,9 +14,14 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        "text-pop": {
+          "0%": {},
+          "100%": {},
+        },
       },
       animation: {
-        "fade-in-down": "fade-in-down 0.3s ease-in-out",
+        "fade-in-down": "fade-in-down 0.5 ease-in-out",
+        "text-pop": "text-pop 0.5 ease-in-out",
       },
     },
   },
