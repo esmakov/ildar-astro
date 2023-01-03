@@ -5,11 +5,26 @@ const videoStyle = "absolute inset-0 w-full h-full";
 
 <MySiteLayout>
   <div>
-    <h1 class="py-5 text-center text-2xl">Wedding Video</h1>
-    <!-- <div class="flex flex-col items-center bg-slate-200 mb-8 md:mx-12 md:flex-row md:justify-around">
-      <p class="text-center">This text is rather wide now here is some more just to try it out</p>
-      <img src="../../engagement_webp/eugene_felina/Copy of 34.webp" alt="" class="w-7/12">
+    <!-- <div class="grid grid-cols-3 grid-rows-3">
+      <h2
+        class="text-xl z-20 md:text-4xl col-start-1 col-end-2 row-start-1 row-end-2 text-center"
+      >
+        Wedding Video
+      </h2>
+      <img
+        src="../../engagement_webp/eugene_felina/Copy of 34.webp"
+        alt="Woman on a beach"
+        class="col-start-1 col-end-4 row-start-1 row-end-4"
+        id="hero"
+      />
     </div> -->
+
+    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
+      <iframe
+        class={videoStyle}
+        src="https://www.youtube.com/embed/1imoMhbDz2E"
+        frameborder="0"></iframe>
+    </div>
     <div class="relative mx-3 md:mx-12 lg:m-18" style="padding-top: 56.25%">
       <iframe
         class={videoStyle}
@@ -31,10 +46,11 @@ const videoStyle = "absolute inset-0 w-full h-full";
         frameborder="0"></iframe>
     </div>
 
+    <h2 class="text-xl md:text-2xl text-center">Commercial Video</h2>
     <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
       <iframe
         class={videoStyle}
-        src="https://www.youtube.com/embed/uvqTfdJtKUs"
+        src="https://www.youtube.com/embed/xXMw1t2zpF0"
         frameborder="0"></iframe>
     </div>
   </div>

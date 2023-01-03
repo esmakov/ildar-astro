@@ -15,15 +15,19 @@ module.exports = {
           },
         },
         "text-pop": {
-          "0%": {},
-          "100%": {},
+          "0%": {
+            transform: "scale(1)",
+          },
+          "100%": {
+            transform: "scale(1.05)",
+          },
         },
       },
       animation: {
         "fade-in-down": "fade-in-down 0.5 ease-in-out",
-        "text-pop": "text-pop 0.5 ease-in-out",
+        "text-pop": "text-pop 0.1s",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

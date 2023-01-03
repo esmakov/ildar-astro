@@ -1,0 +1,44 @@
+---
+import MySiteLayout from "../../layouts/MySiteLayout.astro";
+import PhotoListFromProps from "../../components/PhotoListFromProps.jsx";
+
+export function getStaticPaths() {
+  return [
+    { params: { couple: "lennyjenny" } },
+    { params: { couple: "eugenefelina" } },
+  ];
+}
+
+const { couple } = Astro.params;
+
+const lenny_jenny_images = import.meta.glob(
+  "../../../public/engagement_webp/lenny_jenny/*.webp"
+);
+const eugene_felina_images = import.meta.glob(
+  "../../../public/engagement_webp/eugene_felina/*.webp"
+);
+
+var imageList = "";
+var title = "";
+let images = [];
+if (couple === "lennyjenny") {
+  title = "Lenny & Jenny";
+  imageList = lenny_jenny_images;
+} else if (couple === "eugenefelina") {
+  title = "Eugene & Felina";
+  imageList = eugene_felina_images;
+}
+---
+
+<MySiteLayout>
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl text-center my-8">
+      {title}
+    </h1>
+    <PhotoListFromProps
+      imageList={imageList}
+      imageClass="my-2 max-w-s md:max-w-3xl lg:max-w-4xl"
+      alt="Engagement photo"
+    />
+  </div>
+</MySiteLayout>
