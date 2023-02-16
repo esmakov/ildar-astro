@@ -5,7 +5,9 @@ export default function PhotoListFromProps({ imageList, imageClass, alt }) {
       {Object.entries(imageList).map(([imageUrl]) => (
         <img
           key={imageUrl}
-          src={imageUrl.substring(15)} // Dumb hacky workaround because rollup breaks the image paths after bundling, and won't bundle them if you initially set them to the final build path made by Esbuild
+          // Cut off "../../../public" from relative path needed for glob import
+          // It's a dumb hacky workaround because rollup breaks the image paths after bundling, and won't bundle them if you initially set them to the final build path made by Esbuild
+          src={imageUrl.substring(15)}
           class={imageClass}
           alt={alt}
           loading="lazy"
