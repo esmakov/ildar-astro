@@ -36,6 +36,7 @@ let currentTime = new Date();
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <script>
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
@@ -48,15 +49,18 @@ let currentTime = new Date();
         prevScrollpos = currentScrollPos;
       };
     </script>
+    <style is:global>
+      /* global styles here */
+    </style>
   </head>
 
   <body class="font-serif">
     <nav
-      class="flex flex-col items-center z-50 p-2 shadow-lg sticky top-0 [transition:top_0.2s] animate-fade-in-down md:flex-row md:justify-center bg-white"
+      class="flex flex-col items-center z-50 p-2 shadow-md sticky top-0 [transition:top_0.2s] animate-fade-in-down md:flex-row md:justify-center bg-white"
       id="navbar"
     >
       <a href="/" class="flex flex-col text-center">
-        <p class="text-xl">Ildar Smakov</p>
+        <p class="text-2xl">Ildar Smakov</p>
         <p class="text-gray-700">Professional Wedding & Commercial Video</p>
       </a>
       <div class="md:px-4 lg:px-8"></div>
