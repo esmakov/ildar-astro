@@ -1,6 +1,6 @@
 ---
 import MySiteLayout from "../../layouts/MySiteLayout.astro";
-import PhotoListFromProps from "../../components/PhotoListFromProps.jsx";
+import PhotoListFromProps from "../../components/PhotoList.jsx";
 
 export function getStaticPaths() {
   return [
@@ -18,9 +18,8 @@ const eugene_felina_images = import.meta.glob(
   "../../../public/engagement_webp/eugene_felina/*.webp"
 );
 
-var imageList = "";
-var title = "";
-let images = [];
+let imageList;
+let title = "";
 if (couple === "lennyjenny") {
   title = "Lenny & Jenny";
   imageList = lenny_jenny_images;

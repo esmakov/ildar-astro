@@ -1,6 +1,12 @@
 ---
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 const videoStyle = "absolute inset-0 w-full h-full";
+const weddingVideoURLs = [
+  "https://www.youtube.com/embed/1imoMhbDz2E",
+  "https://www.youtube.com/embed/9Z6rKjXMOfY",
+  "https://www.youtube.com/embed/jf--4pyrBZI",
+  "https://www.youtube.com/embed/KisGxeFxgJ0",
+];
 ---
 
 <MySiteLayout>
@@ -19,39 +25,22 @@ const videoStyle = "absolute inset-0 w-full h-full";
       />
     </div> -->
 
-    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
-      <iframe
-        class={videoStyle}
-        src="https://www.youtube.com/embed/1imoMhbDz2E"
-        frameborder="0"></iframe>
-    </div>
-    <div class="relative mx-3 md:mx-12 lg:m-18" style="padding-top: 56.25%">
-      <iframe
-        class={videoStyle}
-        src="https://www.youtube.com/embed/9Z6rKjXMOfY"
-        frameborder="0"></iframe>
-    </div>
+    <h2 class="text-xl md:text-4xl text-center mt-4 md:mt-8">Wedding Video</h2>
 
-    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
-      <iframe
-        class={videoStyle}
-        src="https://www.youtube.com/embed/jf--4pyrBZI"
-        frameborder="0"></iframe>
-    </div>
-
-    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
-      <iframe
-        class={videoStyle}
-        src="https://www.youtube.com/embed/KisGxeFxgJ0"
-        frameborder="0"></iframe>
-    </div>
+    {
+      weddingVideoURLs.map((video) => {
+        return (
+          <div class="relative m-3 md:m-12 lg:m-18" style="padding-top:56%">
+            <iframe class={videoStyle} src={video} />
+          </div>
+        );
+      })
+    }
 
     <h2 class="text-xl md:text-2xl text-center">Commercial Video</h2>
-    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top: 56.25%">
-      <iframe
-        class={videoStyle}
-        src="https://www.youtube.com/embed/xXMw1t2zpF0"
-        frameborder="0"></iframe>
+    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top:56%">
+      <iframe class={videoStyle} src="https://www.youtube.com/embed/xXMw1t2zpF0"
+      ></iframe>
     </div>
   </div>
 </MySiteLayout>
