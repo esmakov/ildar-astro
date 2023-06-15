@@ -1,6 +1,6 @@
 ---
+import ResponsiveVideo from "../components/ResponsiveVideo.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-const videoStyle = "absolute inset-0 w-full h-full";
 const weddingVideoURLs = [
   "https://www.youtube.com/embed/1imoMhbDz2E",
   "https://www.youtube.com/embed/9Z6rKjXMOfY",
@@ -10,7 +10,7 @@ const weddingVideoURLs = [
 ---
 
 <MySiteLayout>
-  <div>
+  <div class="flex flex-col gap-8">
     <!-- <div class="grid grid-cols-3 grid-rows-3">
       <h2
         class="text-xl z-20 md:text-4xl col-start-1 col-end-2 row-start-1 row-end-2 text-center"
@@ -25,22 +25,13 @@ const weddingVideoURLs = [
       />
     </div> -->
 
-    <h2 class="text-xl md:text-4xl text-center mt-4 md:mt-8">Wedding Video</h2>
+    <h2 class="text-xl md:text-3xl text-center mt-4 md:mt-6">Wedding Video</h2>
 
-    {
-      weddingVideoURLs.map((video) => {
-        return (
-          <div class="relative m-3 md:m-12 lg:m-18" style="padding-top:56%">
-            <iframe class={videoStyle} src={video} />
-          </div>
-        );
-      })
-    }
+    {weddingVideoURLs.map((video) => {
+      return <ResponsiveVideo src={video} />;
+    })}
 
-    <h2 class="text-xl md:text-2xl text-center">Commercial Video</h2>
-    <div class="relative m-3 md:m-12 lg:m-18" style="padding-top:56%">
-      <iframe class={videoStyle} src="https://www.youtube.com/embed/xXMw1t2zpF0"
-      ></iframe>
-    </div>
+    <h2 class="text-xl md:text-3xl text-center">Commercial Video</h2>
+    <ResponsiveVideo src="https://www.youtube.com/embed/xXMw1t2zpF0" />
   </div>
 </MySiteLayout>
