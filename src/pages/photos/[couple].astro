@@ -1,6 +1,6 @@
 ---
 import MySiteLayout from "../../layouts/MySiteLayout.astro";
-import PhotoListFromProps from "../../components/PhotoList.astro";
+import PhotoList from "../../components/PhotoList.astro";
 
 export function getStaticPaths() {
   return [
@@ -34,7 +34,7 @@ if (couple === "lennyjenny") {
     <h1 class="text-3xl text-center my-8">
       {title}
     </h1>
-    <PhotoListFromProps
+    <PhotoList
       imageList={imageList}
       imageClass="my-2 max-w-s md:max-w-3xl lg:max-w-4xl"
       alt="Engagement photo"
