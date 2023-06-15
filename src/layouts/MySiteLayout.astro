@@ -57,11 +57,14 @@ import Navbar from "../components/Navbar.astro";
         prevScrollpos = currentScrollPos;
       };
     </script>
-    <style is:global>
-      /* global styles here */
-      font-family: "Inter", sans-serif;
-    </style>
   </head>
+
+  <style is:global>
+    /* global styles here */
+    * {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
 
   <body>
     <Navbar />
