@@ -1,17 +1,19 @@
 ---
-import ResponsiveVideo from "../components/ResponsiveVideo.astro";
+import VideoList from "../components/VideoList.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-const weddingVideoURLs = [
-  "https://www.youtube.com/embed/1tgv827JHpI",
-  "https://www.youtube.com/embed/1imoMhbDz2E",
-  "https://www.youtube.com/embed/9Z6rKjXMOfY",
-  "https://www.youtube.com/embed/jf--4pyrBZI",
-  "https://www.youtube.com/embed/KisGxeFxgJ0",
+const weddingVideoIDs = [
+  "1tgv827JHpI",
+  "1imoMhbDz2E",
+  "9Z6rKjXMOfY",
+  "jf--4pyrBZI",
+  "KisGxeFxgJ0",
 ];
+
+const commercialVideoIDs = ["xXMw1t2zpF0"];
 ---
 
 <MySiteLayout>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 items-center">
     <!-- <div class="grid grid-cols-3 grid-rows-3">
       <h2
         class="text-xl z-20 md:text-4xl col-start-1 col-end-2 row-start-1 row-end-2 text-center"
@@ -28,12 +30,11 @@ const weddingVideoURLs = [
 
     <h2 class="text-xl md:text-3xl text-center mt-4 md:mt-6">Wedding Video</h2>
 
-    {weddingVideoURLs.map((video) => {
-      return <ResponsiveVideo src={video} />;
-    })}
+    <VideoList videoIDs={weddingVideoIDs} />
 
     <h2 class="text-xl md:text-3xl text-center">Commercial Video</h2>
-    <ResponsiveVideo src="https://www.youtube.com/embed/xXMw1t2zpF0" />
+
+    <VideoList videoIDs={commercialVideoIDs} />
 
     <div class="h-2"></div>
   </div>

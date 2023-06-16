@@ -1,0 +1,17 @@
+---
+const { videoIDs } = Astro.props;
+---
+
+{videoIDs.map((id) => {
+  return (
+    <lite-youtube
+      videoid={id}
+      style={`
+        background-image: url('https://i.ytimg.com/vi/${id}/maxresdefault.jpg');
+        max-width: none;
+        width: clamp(350px, 90vw, 1000px);
+        `}
+      params="modestbranding=2"
+    />
+  );
+})}

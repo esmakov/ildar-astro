@@ -45,6 +45,14 @@ import Navbar from "../components/Navbar.astro";
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="../../node_modules/lite-youtube-embed/src/lite-yt-embed.css"
+    />
+    <script src="../../node_modules/lite-youtube-embed/src/lite-yt-embed.js">
+
+    </script>
+
     <script>
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
@@ -66,7 +74,7 @@ import Navbar from "../components/Navbar.astro";
     }
   </style>
 
-  <body>
+  <body class="bg-slate-100">
     <Navbar />
 
     <main>
@@ -75,9 +83,7 @@ import Navbar from "../components/Navbar.astro";
       </slot>
     </main>
 
-    <footer
-      class="text-center py-1 text-sm md:text-md bg-gray-700 text-zinc-200"
-    >
+    <footer class="text-center py-1 bg-slate-700 text-zinc-200">
       Copyright {new Date().getFullYear()} Ildar Smakov
     </footer>
   </body>
