@@ -4,14 +4,11 @@ const { videoIDs } = Astro.props;
 
 {videoIDs.map((id) => {
   return (
-    <lite-youtube
-      videoid={id}
-      style={`
-        background-image: url('https://i.ytimg.com/vi/${id}/maxresdefault.jpg');
-        max-width: none;
-        width: clamp(350px, 90vw, 1000px);
-        `}
-      params="modestbranding=2"
-    />
+    <div class="relative mx-3 md:mx-12 lg:mx-28 pt-[56%]">
+      <iframe
+        class="absolute inset-0 w-full h-full"
+        src={`https://www.youtube.com/embed/${id}`}
+      />
+    </div>
   );
 })}
