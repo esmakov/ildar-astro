@@ -40,10 +40,12 @@ const commercialFilenames = [["Londontown", "output_playlist_5.m3u8"]];
   videojs.options.aspectRatio = "16:9";
 
   // Add poster images
-  weddingFilenames.map((_, idx) => {
+  weddingFilenames.map(([name, filename, poster], idx) => {
     const player = videojs(`my-video-${idx}`);
-    player.poster(
-      `https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${weddingFilenames[idx][2]}`
-    );
+    player.src({
+      src: `https://d1q5g8n2xcxwh0.cloudfront.net/HLS/${filename}`,
+      type: "application/x-mpegURL",
+    });
+    player.poster(`https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${poster}`);
   });
 </script>
