@@ -1,5 +1,7 @@
 ---
 const { filename, idx } = Astro.props;
+import videojs from "video.js";
+videojs.options.aspectRatio = "16:9";
 ---
 
 <video
