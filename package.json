@@ -9,14 +9,14 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.1.3",
     "astro": "^2.0.12",
-    "prettier-plugin-astro": "^0.1.1"
+    "prettier-plugin-astro": "^0.1.1",
+    "video.js": "^8.3.0"
   },
   "dependencies": {
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/tailwind": "^3.0.1",
-    "lite-youtube-embed": "^0.2.0",
-    "tailwindcss": "^3.2.6"
+    "tailwindcss": "^3.2.6",
+    "videojs-sprite-thumbnails": "^2.1.1"
   }
 }

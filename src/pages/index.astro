@@ -1,41 +1,54 @@
 ---
-import VideoList from "../components/VideoList.astro";
+import Video from "../components/Video.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-const weddingVideoIDs = [
-  "1tgv827JHpI",
-  "1imoMhbDz2E",
-  "9Z6rKjXMOfY",
-  "jf--4pyrBZI",
-  "KisGxeFxgJ0",
+
+const weddingFilenames = [
+  ["Mikhail and Sophie", "output_playlist_1.m3u8", "MikhailSophie.png"],
+  // ["Johan and Lana", "output_playlist_2.m3u8"],
+  ["David and Cassandra", "output_playlist_3.m3u8", "DavidCassandra.png"],
+  // ["Allen and Nadia", "output_playlist_4.m3u8", "AllenNadia.png"],
 ];
 
-const commercialVideoIDs = ["xXMw1t2zpF0"];
+const commercialFilenames = [["Londontown", "output_playlist_5.m3u8"]];
 ---
 
 <MySiteLayout>
-  <div class="flex flex-col gap-8">
-    <!-- <div class="grid grid-cols-3 grid-rows-3">
-      <h2
-        class="text-xl z-20 md:text-4xl col-start-1 col-end-2 row-start-1 row-end-2 text-center"
-      >
-        Wedding Video
-      </h2>
-      <img
-        src="../../engagement_webp/eugene_felina/Copy of 34.webp"
-        alt="Woman on a beach"
-        class="col-start-1 col-end-4 row-start-1 row-end-4"
-        id="hero"
-      />
-    </div> -->
-
-    <h2 class="text-xl md:text-3xl text-center mt-4 md:mt-6">Wedding Video</h2>
-
-    <VideoList videoIDs={weddingVideoIDs} />
-
-    <h2 class="text-xl md:text-3xl text-center">Commercial Video</h2>
-
-    <VideoList videoIDs={commercialVideoIDs} />
-
-    <div class="h-2"></div>
+  <h2 class="text-xl md:text-3xl font-medium text-center m-4 md:mt-6">
+    Wedding Video
+  </h2>
+  <div class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300">
+    {weddingFilenames.map(([title, filename], idx) => (
+      <div class="mx-16">
+        <div class="text-xl">{title}</div>
+        <div class="">
+          <Video filename={filename} idx={idx} />
+        </div>
+      </div>
+    ))}
   </div>
 </MySiteLayout>
+
+<script>
+  const weddingFilenames = [
+    ["Mikhail and Sophie", "output_playlist_1.m3u8", "MikhailSophie.png"],
+    // ["Johan and Lana", "output_playlist_2.m3u8"],
+    ["David and Cassandra", "output_playlist_3.m3u8", "DavidCassandra.png"],
+    ["Allen and Nadia", "output_playlist_4.m3u8", "AllenNadia.png"],
+  ];
+
+  import videojs from "video.js";
+  videojs.options.aspectRatio = "16:9";
+
+  // Add poster images
+  weddingFilenames.map((_, idx) => {
+    const player = videojs(`my-video-${idx}`);
+    player.poster(
+      `https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${weddingFilenames[idx][2]}`
+    );
+  });
+
+  const player = videojs("my-video-0");
+  player.poster(
+    "https://d1q5g8n2xcxwh0.cloudfront.net/Posters/MikhailSophie.png"
+  );
+</script>

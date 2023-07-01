@@ -4,6 +4,31 @@ import Navbar from "../components/Navbar.astro";
 
 <html>
   <head>
+    <title>Ildar Smakov Wedding Video</title>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Professional Wedding and Commerical Video in NYC"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Video.js -->
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.10.2/video-js.css" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       type="text/partytown"
@@ -23,41 +48,11 @@ import Navbar from "../components/Navbar.astro";
       gtag("config", "G-M2PER38VWR");
     </script>
 
-    <title>Ildar Smakov Wedding & Commercial Video</title>
-    <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="Professional Wedding and Commerical Video in NYC"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="../../node_modules/lite-youtube-embed/src/lite-yt-embed.css"
-    />
-    <script src="../../node_modules/lite-youtube-embed/src/lite-yt-embed.js">
-
-    </script>
-
     <script>
       let prevScrollpos = window.pageYOffset;
       window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
+        if (currentScrollPos < prevScrollpos) {
           document.getElementById("navbar").style.top = "0";
         } else {
           document.getElementById("navbar").style.top = "-104px";
@@ -65,26 +60,39 @@ import Navbar from "../components/Navbar.astro";
         prevScrollpos = currentScrollPos;
       };
     </script>
+
+    <style is:global>
+      /* global styles here */
+      body {
+        font-family: "EB Garamond", serif;
+        @apply antialiased;
+      }
+      .video-js .vjs-remaining-time {
+        display: none;
+      } /* .video-js
+      .vjs-current-time { display: block; } .video-js .vjs-time-divider {
+      display: block; } .video-js .vjs-duration { display: block; } .video-js
+      .vjs-load-progress { display: inline-block; background: PaleGreen; height:
+      8px; width: 100%; } .video-js .vjs-play-progress { display: inline-block;
+      background: LightCoral; height: 8px; width: 100%; } .video-js
+      .vjs-picture-in-picture-control { display: none; } */ /* .video-js
+      .vjs-progress-holder { margin-left: 0px; margin-right: 0px; background:
+      Blue; } */ /* .video-js .vjs-loading-spinner{display: block;} */ /*
+      .video-js .vjs-progress-holder .vjs-play-progress { display: none; } */
+    </style>
   </head>
-
-  <style is:global>
-    /* global styles here */
-    * {
-      font-family: "Inter", sans-serif;
-    }
-  </style>
-
-  <body class="bg-slate-100">
-    <Navbar />
-
-    <main>
-      <slot>
-        <!-- your content is injected here -->
-      </slot>
-    </main>
-
-    <footer class="text-center py-1 bg-slate-700 text-zinc-200">
-      Copyright {new Date().getFullYear()} Ildar Smakov
-    </footer>
-  </body>
 </html>
+
+<body class="bg-slate-100">
+  <Navbar />
+
+  <main>
+    <slot>
+      <!-- your content is injected here -->
+    </slot>
+  </main>
+
+  <footer class="text-center py-1 bg-slate-300 text-slate-900">
+    Copyright {new Date().getFullYear()} Ildar Smakov
+  </footer>
+</body>
