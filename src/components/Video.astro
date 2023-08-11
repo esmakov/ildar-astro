@@ -1,18 +1,15 @@
 ---
-const { filename, idx } = Astro.props;
-import videojs from "video.js";
-videojs.options.aspectRatio = "16:9";
+const { filename, id, poster } = Astro.props;
 ---
 
 <video
-  id=`my-video-${idx}`
+  id=`my-video-${id}`
   class="video-js vjs-big-play-centered"
   controls
   preload="auto"
   width="1920"
   height="1080"
-  muted
-  data-setup="{}"
+  data-setup=`{"poster":"https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${poster}", "aspectRatio":"16:9"}`
 >
   <source
     src=`https://d1q5g8n2xcxwh0.cloudfront.net/HLS/${filename}`
