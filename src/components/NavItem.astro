@@ -1,0 +1,11 @@
+---
+const { href, name } = Astro.props;
+---
+
+<li
+  class="text-lg p-1 md:p-2 md:text-xl hover:shadow-md hover:animate-text-pop rounded-md"
+>
+  <a href={href} class="flex">
+    <slot />{name}
+  </a>
+</li>
