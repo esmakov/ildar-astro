@@ -10,13 +10,13 @@
   },
   "devDependencies": {
     "astro": "^2.0.12",
-    "prettier-plugin-astro": "^0.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.2",
     "video.js": "^8.3.0"
   },
   "dependencies": {
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/tailwind": "^3.0.1",
-    "tailwindcss": "^3.2.6",
-    "videojs-sprite-thumbnails": "^2.1.1"
+    "prettier-plugin-astro": "^0.11.0",
+    "tailwindcss": "^3.3.3"
   }
 }
