@@ -4,17 +4,17 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
 
 <MySiteLayout>
   <div
-    class="flex flex-col items-center md:flex-row md:justify-center md:min-h-[90vh] md:gap-20"
+    class="flex flex-col items-center md:min-h-[90vh] md:flex-row md:justify-center md:gap-20"
   >
     <div
-      class="flex flex-col items-center shadow-md rounded-lg p-6 m-4 max-w-sm bg-slate-300"
+      class="m-4 flex max-w-sm flex-col items-center rounded-lg bg-slate-300 p-6 shadow-md"
     >
-      <p class="text-lg max-w-lg text-center font-bold">
+      <p class="max-w-lg text-center text-lg font-bold">
         Ildar Smakov is a photographer, videographer, and editor with over 20
         years of experience serving the greater New York City area.
       </p>
       <p class="text-xl text-slate-800">Contact:</p>
-      <a href="mailto:smakov.ildar@gmail.com" class="underline italic text-2xl">
+      <a href="mailto:smakov.ildar@gmail.com" class="text-2xl italic underline">
         Email
       </a>
     </div>
@@ -22,7 +22,7 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
     <img
       src="/self.webp"
       alt="Portrait of Ildar Smakov"
-      class="max-w-xs shadow-lg m-4 rounded-md"
+      class="m-4 max-w-xs rounded-md shadow-lg"
       height="1050"
       width="700"
     />
