@@ -16,10 +16,12 @@ const commercialFilenames = [["Londontown", "output_playlist_5.m3u8"]];
   <h2 class="mt-4 text-center text-xl font-medium md:mt-6 md:text-3xl">
     Wedding Video
   </h2>
-  <div class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300">
+  <div
+    class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-8"
+  >
     {
       weddingFilenames.map(([title, filename, poster], idx) => (
-        <div class="mx-8 flex flex-col md:mx-32">
+        <div class="mx-8 flex flex-col md:mx-44">
           <div class="mx-auto my-2 text-xl md:text-2xl">{title}</div>
           <Video filename={filename} id={idx} poster={poster} />
         </div>
