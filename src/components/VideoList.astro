@@ -1,0 +1,17 @@
+---
+import Video from "./Video.astro";
+
+const { filenames, listTitle } = Astro.props;
+---
+
+<h2 class="mt-4 text-center text-xl font-medium md:mt-6 md:text-3xl">
+  {listTitle}
+</h2>
+{
+  filenames.map(([title, filename, poster], idx) => (
+    <div class="mx-8 flex flex-col md:mx-44">
+      <div class="mx-auto my-2 text-xl md:text-2xl">{title}</div>
+      <Video filename={filename} id={idx} poster={poster} />
+    </div>
+  ))
+}
