@@ -29,9 +29,28 @@ if (couple === "lennyjenny") {
 }
 ---
 
+<script>
+  let prevScrollpos = window.pageYOffset;
+  const nav = document.querySelector("nav");
+
+  window.onscroll = function () {
+    let navHeight = nav.offsetHeight;
+
+    let currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos < prevScrollpos) {
+      nav.style.top = "0";
+    } else {
+      nav.style.top = `${-navHeight}px`;
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+
 <MySiteLayout>
-  <div class="flex flex-col items-center">
-    <h1 class="my-8 text-center text-3xl">
+  <div class="flex flex-col items-center bg-[rgb(88_88_88)]">
+    <h1 class="my-8 text-center text-3xl text-gray-100">
       {title}
     </h1>
     <PhotoList imageList={imageList} alt="Engagement photo" />

@@ -25,16 +25,74 @@ const weddingFilenames = [
   // ["Allen and Nadia", "Allen_Nadia/output_playlist_4.m3u8", "AllenNadia.png"],
 ];
 
-const commercialFilenames = [
-  ["Belly Trance", "Belly_Trance/output.m3u8", "Belly_Trance.webp"],
-];
+const bannerFilename = "output_playlist.m3u8";
+const bannerPoster = "LennyJenny.jpg";
 ---
 
+<script>
+  let prevScrollpos = window.pageYOffset;
+  const nav = document.querySelector("nav");
+  nav.style.backgroundColor = "transparent";
+
+  const bannerVideo = document.querySelector("#banner-video");
+  // bannerVideo.style.marginTop = `${-navHeight}px`;
+
+  window.onscroll = function () {
+    let navHeight = nav.offsetHeight;
+
+    let currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos < prevScrollpos) {
+      nav.style.top = "0";
+    } else {
+      nav.style.top = `${-navHeight}px`;
+    }
+
+    let bannerVideoHeight = bannerVideo.offsetHeight;
+    let scrollPositionForColorChange = bannerVideoHeight - navHeight;
+
+    if (currentScrollPos >= scrollPositionForColorChange) {
+      nav.style.backgroundColor = "white";
+    } else {
+      nav.style.backgroundColor = "transparent";
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+
 <MySiteLayout>
+  <video
+    id="banner-video"
+    class=`video-js mt-[-99px] hidden shadow-2xl md:block`
+    preload="auto"
+    muted
+    loop
+    autoplay
+    data-setup=`{"poster":"https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${bannerPoster}", "aspectRatio":"16:9"}`
+  >
+    <source
+      src=`https://d1q5g8n2xcxwh0.cloudfront.net/HLS/${bannerFilename}`
+      type="application/x-mpegURL"
+    />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video
+      </a>
+    </p>
+  </video>
+
+  <span
+    class="relative left-[5rem] top-[-20rem] text-gray-300 md:text-2xl lg:text-3xl"
+  >
+    Capture the special moments.
+  </span>
+
   <div
     class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
   >
-    <VideoList listTitle="Wedding Videos" filenames={weddingFilenames} />
-    <VideoList listTitle="Commercial Videos" filenames={commercialFilenames} />
+    <VideoList listTitle="Wedding Video" filenames={weddingFilenames} />
   </div>
 </MySiteLayout>

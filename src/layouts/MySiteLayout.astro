@@ -45,19 +45,6 @@ import Navbar from "../components/Navbar.astro";
       gtag("config", "G-M2PER38VWR");
     </script>
 
-    <script>
-      let prevScrollpos = window.pageYOffset;
-      window.onscroll = function () {
-        let currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < prevScrollpos) {
-          document.querySelector("nav").style.top = "0";
-        } else {
-          document.querySelector("nav").style.top = "-104px";
-        }
-        prevScrollpos = currentScrollPos;
-      };
-    </script>
-
     <style is:global>
       /* global styles here */
       body {
@@ -80,7 +67,7 @@ import Navbar from "../components/Navbar.astro";
   </head>
 </html>
 
-<body class="bg-slate-100">
+<body>
   <Navbar />
 
   <main>
