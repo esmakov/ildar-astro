@@ -5,7 +5,7 @@ const { filename, poster } = Astro.props;
 <video
   class="video-js vjs-big-play-centered shadow-xl"
   controls
-  preload="metadata"
+  preload="none"
   data-setup=`{"poster":"https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${poster}", "aspectRatio":"16:9"}`
 >
   <source
