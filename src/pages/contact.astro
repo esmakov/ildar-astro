@@ -14,7 +14,26 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
         years of experience serving the greater New York City area.
       </p>
       <p class="text-xl text-slate-800">Contact:</p>
-      <p class="text-2xl underline">smakov.ildar@gmail.com</p>
+      <!-- <p class="text-2xl underline">
+        smakov.ildar@gmail.com
+      </p> -->
+      <form class="flex flex-col gap-2">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button class="rounded-md border-2 bg-slate-50" type="submit"
+          >Submit</button
+        >
+      </form>
     </div>
 
     <img
@@ -24,3 +43,22 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
     />
   </div>
 </MySiteLayout>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function (event) {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    let data = { name, email, subject, message };
+    event.preventDefault();
+    fetch("/mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json().then((body) => console.log(body)));
+  });
+</script>
