@@ -2,6 +2,12 @@
 import NavItem from "./NavItem.astro";
 ---
 
+<style>
+  #dropdown:hover #dropdown-menu {
+    display: block;
+  }
+</style>
+
 <nav
   class="sticky z-10 flex animate-fade-in-down flex-col items-center bg-white p-2 shadow-md [transition:top_0.2s] md:flex-row md:justify-center"
 >
@@ -13,8 +19,23 @@ import NavItem from "./NavItem.astro";
   <div class="md:px-2 lg:px-8"></div>
 
   <ul class="flex gap-1 md:gap-2 lg:gap-4">
+    <li
+      id="dropdown"
+      class="relative rounded-md p-1 hover:shadow-md md:p-2 md:text-lg lg:text-xl"
+    >
+      Videography
+      <div
+        class="absolute left-0 top-full hidden min-w-max rounded-md border border-gray-200 bg-white py-1 shadow-md"
+        id="dropdown-menu"
+      >
+        <a
+          class="dropdown-item block rounded px-4 hover:bg-slate-100"
+          href="/commercial">Commercial Video</a
+        >
+      </div>
+    </li>
+
     <NavItem href="/photos" name="Photography" />
-    <NavItem href="/commercial" name="Commercial" />
     <NavItem href="/contact" name="Contact" />
 
     <NavItem

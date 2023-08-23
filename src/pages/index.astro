@@ -1,5 +1,4 @@
 ---
-import Video from "../components/Video.astro";
 import VideoList from "../components/VideoList.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 
@@ -30,17 +29,24 @@ const bannerPoster = "LennyJenny.jpg";
 ---
 
 <script>
-  let prevScrollpos = window.pageYOffset;
+  let prevScrollpos = window.scrollY;
 
-  const nav = document.querySelector("nav");
+  const nav = document.querySelector("nav")!;
   nav.style.backgroundColor = "transparent";
   let navHeight = nav.offsetHeight;
 
-  const bannerVideo = document.querySelector("#banner-video");
+  const bannerVideo = document.querySelector("#banner-video")!;
   // bannerVideo.style.marginTop = `${-navHeight}px`;
 
+  const submenu = document.querySelector("#dropdown-menu")!;
+  submenu.style.backgroundColor = "transparent";
+  submenu.style.border = "medium";
+
+  const dropdownItem = document.querySelector(".dropdown-item")!;
+  dropdownItem.style.backgroundColor = "transparent";
+
   window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.scrollY;
 
     if (currentScrollPos < prevScrollpos) {
       nav.style.top = "0";
@@ -53,8 +59,10 @@ const bannerPoster = "LennyJenny.jpg";
 
     if (currentScrollPos >= scrollPositionForColorChange) {
       nav.style.backgroundColor = "white";
+      submenu.style.backgroundColor = "white";
     } else {
       nav.style.backgroundColor = "transparent";
+      submenu.style.backgroundColor = "transparent";
     }
 
     prevScrollpos = currentScrollPos;
