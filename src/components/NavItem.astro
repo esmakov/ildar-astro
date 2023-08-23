@@ -2,10 +2,11 @@
 const { href, name } = Astro.props;
 ---
 
-<li
-  class="text-md rounded-md p-1 hover:animate-text-pop hover:shadow-md md:p-2 md:text-lg lg:text-xl"
->
-  <a href={href} class="flex">
+<li>
+  <a
+    href={href}
+    class="text-md flex rounded-md p-1 hover:animate-text-pop hover:shadow-md md:p-2 md:text-lg lg:text-xl"
+  >
     <slot />{name}
   </a>
 </li>

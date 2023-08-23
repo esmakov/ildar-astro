@@ -8,13 +8,13 @@ const commercialFilenames = [
 ---
 
 <script>
-  let prevScrollpos = window.pageYOffset;
-  const nav = document.querySelector("nav");
+  let prevScrollpos = window.scrollY;
+  const nav = document.querySelector("nav")!;
 
   window.onscroll = function () {
     let navHeight = nav.offsetHeight;
 
-    let currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.scrollY;
 
     if (currentScrollPos < prevScrollpos) {
       nav.style.top = "0";
