@@ -15,4 +15,9 @@ export default defineConfig({
       },
     }),
   ],
+  // vite: {
+  //   ssr: {
+  //     external: ["dotenv", "nodemailer"],
+  //   },
+  // },
 });

@@ -53,12 +53,15 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
 
     let data = { name, email, subject, message };
     event.preventDefault();
+
     fetch("/mail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((res) => res.json().then((body) => console.log(body)));
+    })
+      .then((res) => res.json())
+      .then((body) => console.log(body));
   });
 </script>
