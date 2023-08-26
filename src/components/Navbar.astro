@@ -81,7 +81,7 @@ import NavItem from "./NavItem.astro";
   }
   .bar {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: #000;
     margin: 6px 0;
     transition: 0.4s;
@@ -94,7 +94,7 @@ import NavItem from "./NavItem.astro";
     transform-origin: left center;
   }
   #menu-icon.active .bar:nth-child(1) {
-    transform: translate(5px, -1px) rotate(45deg);
+    transform: translate(0px, 0px) rotate(45deg);
   }
 
   #menu-icon.active .bar:nth-child(2) {
@@ -102,6 +102,6 @@ import NavItem from "./NavItem.astro";
   }
 
   #menu-icon.active .bar:nth-child(3) {
-    transform: translate(4px, 0px) rotate(-45deg);
+    transform: translate(0px, 4px) rotate(-45deg);
   }
 </style>
