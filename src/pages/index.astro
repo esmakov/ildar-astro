@@ -58,7 +58,7 @@ const bannerPoster = "LennyJenny.jpg";
     let scrollPositionForColorChange = bannerVideoHeight - navHeight;
 
     if (currentScrollPos >= scrollPositionForColorChange) {
-      nav.style.backgroundColor = "white";
+      nav.style.backgroundColor = null;
       submenu.style.backgroundColor = "white";
     } else {
       nav.style.backgroundColor = "transparent";
@@ -72,7 +72,7 @@ const bannerPoster = "LennyJenny.jpg";
 <MySiteLayout>
   <video
     id="banner-video"
-    class=`video-js mt-[-99px] hidden shadow-2xl md:block`
+    class=`video-js mt-[-60px] hidden md:block`
     preload="auto"
     muted
     loop
@@ -96,7 +96,7 @@ const bannerPoster = "LennyJenny.jpg";
     class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
   >
     <span
-      class="relative left-[5rem] top-[-20rem] mb-[-2rem] max-w-fit text-gray-300 md:text-2xl lg:text-3xl"
+      class="absolute left-[15%] top-40 hidden text-gray-300 md:inline md:text-2xl lg:text-3xl"
     >
       Capture Your Love Story
     </span>

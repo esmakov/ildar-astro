@@ -5,8 +5,8 @@ const { href, name } = Astro.props;
 <li>
   <a
     href={href}
-    class="text-md flex rounded-md p-1 hover:animate-text-pop hover:shadow-md md:p-2 md:text-lg lg:text-xl"
+    class="block rounded-md p-3 text-lg hover:animate-text-pop hover:shadow-md md:p-2 lg:text-xl"
   >
-    <slot />{name}
+    {name}
   </a>
 </li>
