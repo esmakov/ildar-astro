@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
+import selfPortrait from "@assets/selfportrait.webp";
 ---
 
 <MySiteLayout>
@@ -17,8 +19,8 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
       <p class="text-2xl underline">smakov.ildar@gmail.com</p>
     </div>
 
-    <img
-      src="https://d1q5g8n2xcxwh0.cloudfront.net/selfportrait.webp"
+    <Image
+      src={selfPortrait}
       alt="Portrait of Ildar Smakov"
       class="m-4 max-w-xs rounded-md shadow-lg"
     />
