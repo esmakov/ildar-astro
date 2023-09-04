@@ -65,18 +65,18 @@ import Navbar from "../components/Navbar.astro";
       .video-js .vjs-progress-holder .vjs-play-progress { display: none; } */
     </style>
   </head>
+
+  <body class="bg-slate-100">
+    <Navbar />
+
+    <main>
+      <slot>
+        <!-- your content is injected here -->
+      </slot>
+    </main>
+
+    <footer class="bg-slate-300 p-2 text-center text-slate-900">
+      Copyright {new Date().getFullYear()} Ildar Smakov
+    </footer>
+  </body>
 </html>
-
-<body class="bg-slate-100">
-  <Navbar />
-
-  <main>
-    <slot>
-      <!-- your content is injected here -->
-    </slot>
-  </main>
-
-  <footer class="bg-slate-300 p-2 text-center text-slate-900">
-    Copyright {new Date().getFullYear()} Ildar Smakov
-  </footer>
-</body>

@@ -1,5 +1,5 @@
 ---
-import VideoList from "../components/VideoList.astro";
+import VideoList from "@components/VideoList.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 
 const weddingFilenames = [
@@ -35,14 +35,14 @@ const bannerPoster = "LennyJenny.jpg";
   nav.style.backgroundColor = "transparent";
   let navHeight = nav.offsetHeight;
 
-  const bannerVideo = document.querySelector("#banner-video")!;
+  const bannerVideo = document.querySelector("#banner-video") as HTMLElement;
   // bannerVideo.style.marginTop = `${-navHeight}px`;
 
-  const submenu = document.querySelector("#dropdown-menu")!;
+  const submenu = document.querySelector("#dropdown-menu") as HTMLElement;
   submenu.style.backgroundColor = "transparent";
   submenu.style.border = "medium";
 
-  const dropdownItem = document.querySelector(".dropdown-item")!;
+  const dropdownItem = document.querySelector(".dropdown-item") as HTMLElement;
   dropdownItem.style.backgroundColor = "transparent";
 
   window.onscroll = function () {

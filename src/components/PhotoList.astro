@@ -2,14 +2,11 @@
 const { imageList, alt } = Astro.props;
 ---
 
-<!-- Takes glob import [imagepath:string, {}] and returns an array of image paths, starting at the substring() index --><!-- Cut off "../../../public" from relative path needed for glob import.
-It's a dumb hacky workaround because rollup breaks the image paths after bundling, and
-won't bundle them if you initially set them to the final build path made by Esbuild -->
 <div class="flex flex-col">
   {
-    Object.entries(imageList).map(([imageUrl]) => (
+    imageList.map((imageUrl) => (
       <img
-        src={imageUrl.substring(15)}
+        src={imageUrl}
         class="max-w-s md:max-w-3xl lg:max-w-4xl"
         alt={alt}
         loading="lazy"

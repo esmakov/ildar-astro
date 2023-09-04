@@ -1,6 +1,6 @@
 ---
 import MySiteLayout from "../../layouts/MySiteLayout.astro";
-import PhotoList from "../../components/PhotoList.astro";
+import PhotoList from "@components/PhotoList.astro";
 
 export function getStaticPaths() {
   return [
@@ -11,21 +11,34 @@ export function getStaticPaths() {
 
 const { couple } = Astro.params;
 
-const lenny_jenny_images = import.meta.glob(
-  "../../../public/engagement_webp/lenny_jenny/*.webp",
-);
-const eugene_felina_images = import.meta.glob(
-  "../../../public/engagement_webp/eugene_felina/*.webp",
-);
+let imageList, title;
 
-let imageList;
-let title = "";
-if (couple === "lennyjenny") {
-  title = "Lenny & Jenny";
-  imageList = lenny_jenny_images;
-} else if (couple === "eugenefelina") {
-  title = "Eugene & Felina";
-  imageList = eugene_felina_images;
+switch (couple) {
+  case "lennyjenny":
+    title = "Lenny & Jenny";
+    imageList = Object.values(
+      import.meta.glob(
+        "../../assets/lennyjenny/*.{webp,png,jpg,jpeg,PNG,JPEG}",
+        {
+          eager: true,
+          as: "url",
+        },
+      ),
+    );
+    break;
+
+  case "eugenefelina":
+    title = "Eugene & Felina";
+    imageList = Object.values(
+      import.meta.glob(
+        "../../assets/eugenefelina/*.{webp,png,jpg,jpeg,PNG,JPEG}",
+        {
+          eager: true,
+          as: "url",
+        },
+      ),
+    );
+    break;
 }
 ---
 

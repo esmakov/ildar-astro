@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import MySiteLayout from "../../layouts/MySiteLayout.astro";
+import lennyJenny from "@assets/lennyjenny/Copy of 1.webp";
+import eugeneFelina from "@assets/eugenefelina/Copy of 109.webp";
 ---
 
 <MySiteLayout>
@@ -10,13 +13,7 @@ import MySiteLayout from "../../layouts/MySiteLayout.astro";
         href="photos/lennyjenny"
         class="block max-w-md rounded-lg border text-center shadow-md"
       >
-        <img
-          src="../../engagement_webp/lenny_jenny/Copy of 1.webp"
-          alt="Engagement photo"
-          class="object-cover"
-          width="447"
-          height="345"
-        />
+        <Image src={lennyJenny} alt="Engagement photo" class="object-cover" />
         <p class="p-4 text-lg">Lenny & Jenny</p>
       </a>
 
@@ -24,13 +21,7 @@ import MySiteLayout from "../../layouts/MySiteLayout.astro";
         href="photos/eugenefelina"
         class="max-w-md rounded-lg border text-center shadow-md"
       >
-        <img
-          src="../../engagement_webp/eugene_felina/Copy of 109.webp"
-          alt="Engagement photo"
-          class="object-cover"
-          width="447"
-          height="345"
-        />
+        <Image src={eugeneFelina} alt="Engagement photo" class="object-cover" />
         <p class="p-4 text-lg">Eugene & Felina</p>
       </a>
     </div>
