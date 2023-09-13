@@ -1,6 +1,5 @@
 ---
 import MySiteLayout from "../../layouts/MySiteLayout.astro";
-import PhotoList from "@components/PhotoList.astro";
 
 export function getStaticPaths() {
   return [
@@ -62,10 +61,21 @@ switch (couple) {
 </script>
 
 <MySiteLayout>
-  <div class="flex flex-col items-center bg-[rgb(88_88_88)]">
-    <h1 class="my-8 text-center text-3xl text-gray-100">
+  <div class="flex flex-col items-center bg-slate-600">
+    <h1 class="my-8 text-center text-3xl font-semibold text-slate-100">
       {title}
     </h1>
-    <PhotoList imageList={imageList} alt="Engagement photo" />
+    <div class="flex flex-col gap-6 p-8">
+      {
+        imageList.map((imageUrl) => (
+          <img
+            src={imageUrl}
+            class="max-w-s"
+            alt="Engagement photo"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
   </div>
 </MySiteLayout>
