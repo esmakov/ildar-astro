@@ -1,32 +1,50 @@
 ---
-import VideoList from "@components/VideoList.astro";
 import MySiteLayout from "../layouts/MySiteLayout.astro";
-
-const weddingFilenames = [
-  [
-    "Alexander and Lauren",
-    "Alexander_Lauren/output.m3u8",
-    "AlexanderLauren.jpg",
-  ],
-  ["Ryan and Samantha", "Ryan_Samantha/output.m3u8", "RyanSamantha.jpg"],
-  [
-    "Thomas and Mary-Catherine",
-    "Thomas_Mary-Catherine/output.m3u8",
-    "ThomasMary-Catherine.jpg",
-  ],
-  ["Mikhail and Sophie", "Mike_Sophie/output.m3u8", "MikeSophie.jpg"],
-  ["Johan and Lana", "Johan_Lana/output_playlist_2.m3u8", "JohanLana.png"],
-  [
-    "David and Cassandra",
-    "David_Cassandra/output_playlist_3.m3u8",
-    "DavidCassandra.jpg",
-  ],
-  // ["Allen and Nadia", "Allen_Nadia/output_playlist_4.m3u8", "AllenNadia.png"],
-];
+import { Image } from "astro:assets";
+import Hero from "@assets/eugenefelina/Copy of 0.webp";
 
 const bannerFilename = "output_playlist.m3u8";
 const bannerPoster = "LennyJenny.jpg";
 ---
+
+<MySiteLayout>
+  <div class="h-screen overflow-hidden md:hidden">
+    <Image
+      src={Hero}
+      class="absolute [clip-path:inset(0px_0px)] md:hidden"
+      alt="Engagement photo banner"
+    />
+  </div>
+  <video
+    id="banner-video"
+    class=`video-js mt-[-60px] hidden md:block`
+    preload="auto"
+    muted
+    loop
+    autoplay
+    data-setup=`{"poster":"https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${bannerPoster}", "aspectRatio":"16:9"}`
+  >
+    <source
+      src=`https://d1q5g8n2xcxwh0.cloudfront.net/HLS/${bannerFilename}`
+      type="application/x-mpegURL"
+    />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video
+      </a>
+    </p>
+  </video>
+
+  <div class="flex flex-col gap-4">
+    <span
+      class="absolute left-[15%] top-80 hidden font-semibold text-neutral-200 md:inline md:text-2xl lg:text-3xl"
+    >
+      Capture Your Love Story
+    </span>
+  </div>
+</MySiteLayout>
 
 <script>
   let prevScrollpos = window.scrollY;
@@ -42,8 +60,10 @@ const bannerPoster = "LennyJenny.jpg";
   submenu.style.backgroundColor = "transparent";
   submenu.style.border = "medium";
 
-  const dropdownItem = document.querySelector(".dropdown-item") as HTMLElement;
-  dropdownItem.style.backgroundColor = "transparent";
+  const dropdownItems = document.querySelectorAll(
+    ".dropdown-item",
+  ) as NodeListOf<HTMLElement>;
+  dropdownItems.forEach((e) => (e.style.backgroundColor = "transparent"));
 
   window.onscroll = function () {
     let currentScrollPos = window.scrollY;
@@ -68,39 +88,3 @@ const bannerPoster = "LennyJenny.jpg";
     prevScrollpos = currentScrollPos;
   };
 </script>
-
-<MySiteLayout>
-  <video
-    id="banner-video"
-    class=`video-js mt-[-60px] hidden md:block`
-    preload="auto"
-    muted
-    loop
-    autoplay
-    data-setup=`{"poster":"https://d1q5g8n2xcxwh0.cloudfront.net/Posters/${bannerPoster}", "aspectRatio":"16:9"}`
-  >
-    <source
-      src=`https://d1q5g8n2xcxwh0.cloudfront.net/HLS/${bannerFilename}`
-      type="application/x-mpegURL"
-    />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video
-      </a>
-    </p>
-  </video>
-
-  <div
-    class="flex flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
-  >
-    <span
-      class="absolute left-[15%] top-80 hidden font-semibold text-neutral-200 md:inline md:text-2xl lg:text-3xl"
-    >
-      Capture Your Love Story
-    </span>
-
-    <VideoList listTitle="Wedding Video" filenames={weddingFilenames} />
-  </div>
-</MySiteLayout>

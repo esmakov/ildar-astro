@@ -41,25 +41,6 @@ switch (couple) {
 }
 ---
 
-<script>
-  let prevScrollpos = window.scrollY;
-  const nav = document.querySelector("nav");
-
-  window.onscroll = function () {
-    let navHeight = nav.offsetHeight;
-
-    let currentScrollPos = window.scrollY;
-
-    if (currentScrollPos < prevScrollpos) {
-      nav.style.top = "0";
-    } else {
-      nav.style.top = `${-navHeight}px`;
-    }
-
-    prevScrollpos = currentScrollPos;
-  };
-</script>
-
 <MySiteLayout>
   <div class="flex flex-col items-center bg-slate-600">
     <h1 class="my-8 text-center text-3xl font-semibold text-slate-100">
@@ -79,3 +60,22 @@ switch (couple) {
     </div>
   </div>
 </MySiteLayout>
+
+<script>
+  let prevScrollpos = window.scrollY;
+  const nav = document.querySelector("nav");
+
+  window.onscroll = function () {
+    let navHeight = nav.offsetHeight;
+
+    let currentScrollPos = window.scrollY;
+
+    if (currentScrollPos < prevScrollpos) {
+      nav.style.top = "0";
+    } else {
+      nav.style.top = `${-navHeight}px`;
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>

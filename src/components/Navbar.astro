@@ -22,6 +22,18 @@ import NavItem from "./NavItem.astro";
         id="dropdown-menu"
       >
         <a
+          href="/wedding"
+          class="dropdown-item block rounded px-4 hover:bg-gray-200"
+        >
+          Wedding Video
+        </a>
+        <a
+          href="/mitzvah"
+          class="dropdown-item block rounded px-4 hover:bg-gray-200"
+        >
+          Bat/Bar Mitzvah Video
+        </a>
+        <a
           href="/commercial"
           class="dropdown-item block rounded px-4 hover:bg-gray-200"
         >
@@ -38,6 +50,8 @@ import NavItem from "./NavItem.astro";
     id="mobile-menu"
     class="absolute right-0 top-0 hidden h-screen flex-col gap-8 bg-white pt-24"
   >
+    <NavItem href="/wedding" name="Wedding Video" />
+    <NavItem href="/mitzvah" name="Bat/Bar Mitzvah Video" />
     <NavItem href="/commercial" name="Commercial Video" />
     <NavItem href="/photos" name="Photography" />
     <NavItem href="/contact" name="Contact" />

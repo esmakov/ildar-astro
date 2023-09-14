@@ -2,17 +2,17 @@
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 import VideoList from "@components/VideoList.astro";
 
-const commercialFilenames = [
-  ["Belly Trance", "Belly_Trance/output.m3u8", "Belly_Trance.webp"],
-  ["Londontown", "Londontown/output.m3u8", "Londontown.webp"],
-];
+const mitzvahFilenames = [["Alissa", "Alissa/output.m3u8", "Alissa.webp"]];
 ---
 
 <MySiteLayout>
   <div
     class="flex min-h-[90vh] flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
   >
-    <VideoList listTitle="Commerical Video" filenames={commercialFilenames} />
+    <VideoList
+      listTitle="Bat and Bar Mitzvah Video"
+      filenames={mitzvahFilenames}
+    />
   </div>
 </MySiteLayout>
 
