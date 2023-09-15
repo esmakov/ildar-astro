@@ -6,12 +6,12 @@ import selfPortrait from "@assets/selfportrait.webp";
 
 <MySiteLayout>
   <div
-    class="flex flex-col items-center md:min-h-[90vh] md:flex-row md:justify-center md:gap-20"
+    class="flex flex-col items-center justify-center gap-8 bg-gradient-to-b from-slate-100 to-slate-300 py-8 md:min-h-[90vh] md:flex-row md:gap-20"
   >
     <div
-      class="m-4 flex max-w-sm flex-col items-center rounded-lg bg-slate-300 p-6 shadow-md"
+      class="flex max-w-sm flex-col items-center rounded-lg bg-slate-100 p-6 shadow-md"
     >
-      <p class="max-w-lg text-center text-lg font-bold">
+      <p class="max-w-lg text-center text-lg font-semibold">
         Ildar Smakov is a photographer, videographer, and editor with over 20
         years of experience serving the greater New York City area.
       </p>
@@ -22,7 +22,7 @@ import selfPortrait from "@assets/selfportrait.webp";
     <Image
       src={selfPortrait}
       alt="Portrait of Ildar Smakov"
-      class="m-4 max-w-xs rounded-md shadow-lg"
+      class="max-w-xs rounded-md shadow-lg"
     />
   </div>
 </MySiteLayout>

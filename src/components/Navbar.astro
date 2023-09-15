@@ -3,18 +3,18 @@ import NavItem from "./NavItem.astro";
 ---
 
 <nav
-  class="sticky z-10 flex animate-fade-in-down items-center justify-between bg-slate-100 p-2 pl-10 [transition:top_0.2s] md:flex-row md:justify-center"
+  class="sticky z-10 flex animate-fade-in-down items-center justify-between bg-slate-100 p-2 pl-10 [transition:top_0.2s] lg:flex-row lg:justify-center"
 >
   <a href="/" class="flex flex-col items-start text-2xl lg:text-3xl">
     Ildar Smakov
   </a>
 
-  <div class="md:px-2 lg:px-6"></div>
+  <div class="lg:px-6"></div>
 
-  <ul class="hidden items-center justify-center gap-4 md:flex lg:gap-4">
+  <ul class="hidden items-center justify-center gap-4 lg:flex lg:gap-4">
     <li
       id="dropdown"
-      class="relative rounded-md p-1 hover:shadow-md md:p-2 md:text-lg lg:text-xl"
+      class="relative rounded-md p-1 hover:shadow-md lg:p-2 lg:text-xl"
     >
       Videography
       <div
@@ -57,7 +57,7 @@ import NavItem from "./NavItem.astro";
     <NavItem href="/contact" name="Contact" />
   </ul>
 
-  <button id="menu-icon" class="z-10 p-4 md:hidden">
+  <button id="menu-icon" class="z-10 p-4 lg:hidden">
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
