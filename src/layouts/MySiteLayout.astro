@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar.astro";
 <html lang="en">
   <head>
     <title>Ildar Smakov Wedding Video</title>
+
     <meta charset="utf-8" />
     <meta
       name="Ildar Smakov Wedding Video"
@@ -15,8 +16,8 @@ import Navbar from "../components/Navbar.astro";
     <!-- <link href="/dist/output.css" rel="stylesheet" /> -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +34,6 @@ import Navbar from "../components/Navbar.astro";
       src="https://www.googletagmanager.com/gtag/js?id=G-M2PER38VWR"></script>
 
     <link rel="stylesheet" href="https://vjs.zencdn.net/7.10.2/video-js.css" />
-    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
 
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
@@ -53,16 +53,13 @@ import Navbar from "../components/Navbar.astro";
       }
       .video-js .vjs-remaining-time {
         display: none;
-      } /* .video-js
-      .vjs-current-time { display: block; } .video-js .vjs-time-divider {
-      display: block; } .video-js .vjs-duration { display: block; } .video-js
-      .vjs-load-progress { display: inline-block; background: PaleGreen; height:
-      8px; width: 100%; } .video-js .vjs-play-progress { display: inline-block;
-      background: LightCoral; height: 8px; width: 100%; } .video-js
-      .vjs-picture-in-picture-control { display: none; } */ /* .video-js
-      .vjs-progress-holder { margin-left: 0px; margin-right: 0px; background:
-      Blue; } */ /* .video-js .vjs-loading-spinner{display: block;} */ /*
-      .video-js .vjs-progress-holder .vjs-play-progress { display: none; } */
+      }
+      .video-js .vjs-big-play-button {
+        border: none;
+        width: 2em;
+        height: 1.5em;
+        opacity: 0.5;
+      }
     </style>
   </head>
 
@@ -78,5 +75,7 @@ import Navbar from "../components/Navbar.astro";
     <footer class="bg-slate-300 p-2 text-center text-slate-900">
       Copyright {new Date().getFullYear()} Ildar Smakov
     </footer>
+
+    <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
   </body>
 </html>
