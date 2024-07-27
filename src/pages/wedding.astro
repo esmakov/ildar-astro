@@ -3,51 +3,51 @@ import MySiteLayout from "../layouts/MySiteLayout.astro";
 import VideoList from "@components/VideoList.astro";
 
 const weddingFilenames = [
-  [
-    "Alexander and Lauren",
-    "Alexander_Lauren/output.m3u8",
-    "AlexanderLauren.jpg",
-  ],
-  ["Ryan and Samantha", "Ryan_Samantha/output.m3u8", "RyanSamantha.jpg"],
-  [
-    "Thomas and Mary-Catherine",
-    "Thomas_Mary-Catherine/output.m3u8",
-    "ThomasMary-Catherine.jpg",
-  ],
-  ["Mikhail and Sophie", "Mike_Sophie/output.m3u8", "MikeSophie.jpg"],
-  ["Johan and Lana", "Johan_Lana/output_playlist_2.m3u8", "JohanLana.png"],
-  [
-    "David and Cassandra",
-    "David_Cassandra/output_playlist_3.m3u8",
-    "DavidCassandra.jpg",
-  ],
-  // ["Allen and Nadia", "Allen_Nadia/output_playlist_4.m3u8", "AllenNadia.png"],
+    [
+        "Alexander and Lauren",
+        "Alexander_Lauren/output.m3u8",
+        "AlexanderLauren.jpg",
+    ],
+    ["Ryan and Samantha", "Ryan_Samantha/output.m3u8", "RyanSamantha.jpg"],
+    [
+        "Thomas and Mary-Catherine",
+        "Thomas_Mary-Catherine/output.m3u8",
+        "ThomasMary-Catherine.jpg",
+    ],
+    ["Mikhail and Sophie", "Mike_Sophie/output.m3u8", "MikeSophie.jpg"],
+    ["Johan and Lana", "Johan_Lana/output_playlist_2.m3u8", "JohanLana.png"],
+    [
+        "David and Cassandra",
+        "David_Cassandra/output_playlist_3.m3u8",
+        "DavidCassandra.jpg",
+    ],
+    // ["Allen and Nadia", "Allen_Nadia/output_playlist_4.m3u8", "AllenNadia.png"],
 ];
 ---
 
 <MySiteLayout>
-  <div
-    class="flex min-h-[90vh] flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
-  >
-    <VideoList listTitle="Wedding Video" filenames={weddingFilenames} />
-  </div>
+    <div
+        class="flex min-h-[90vh] flex-col gap-4 bg-gradient-to-b from-slate-100 to-slate-300 pb-6"
+    >
+        <VideoList listTitle="Wedding Video" filenames={weddingFilenames} />
+    </div>
 </MySiteLayout>
 
 <script>
-  let prevScrollpos = window.scrollY;
-  const nav = document.querySelector("nav")!;
+    let prevScrollpos = window.scrollY;
+    const nav = document.querySelector("nav");
 
-  window.onscroll = function () {
-    let navHeight = nav.offsetHeight;
+    window.onscroll = function () {
+        let navHeight = nav.offsetHeight;
 
-    let currentScrollPos = window.scrollY;
+        let currentScrollPos = window.scrollY;
 
-    if (currentScrollPos < prevScrollpos) {
-      nav.style.top = "0";
-    } else {
-      nav.style.top = `${-navHeight}px`;
-    }
+        if (currentScrollPos < prevScrollpos) {
+            nav.style.top = "0";
+        } else {
+            nav.style.top = `${-navHeight}px`;
+        }
 
-    prevScrollpos = currentScrollPos;
-  };
+        prevScrollpos = currentScrollPos;
+    };
 </script>

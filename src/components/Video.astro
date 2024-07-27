@@ -3,20 +3,20 @@ const { filename, poster } = Astro.props;
 ---
 
 <video
-  class="video-js vjs-big-play-centered shadow-xl"
-  controls
-  preload="none"
-  data-setup=`{"poster":"https://aa128120fb23d49cd4f08b2d7c85ed42.r2.cloudflarestorage.com/ildar-video/Posters/${poster}", "aspectRatio":"16:9"}`
+    class="video-js vjs-big-play-centered shadow-xl"
+    controls
+    preload="none"
+    data-setup=`{"poster":"https://pub-22f59a51cd784746a509eb963a84a388.r2.dev/Posters/${poster}", "aspectRatio":"16:9"}`
 >
-  <source
-    src=`https://aa128120fb23d49cd4f08b2d7c85ed42.r2.cloudflarestorage.com/ildar-video/HLS/${filename}`
-    type="application/x-mpegURL"
-  />
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a web
-    browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank"
-      >supports HTML5 video
-    </a>
-  </p>
+    <source
+        src=`https://pub-22f59a51cd784746a509eb963a84a388.r2.dev/HLS/${filename}`
+        type="application/x-mpegURL"
+    />
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video
+        </a>
+    </p>
 </video>
